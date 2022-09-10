@@ -14,8 +14,8 @@ jobs:
       uses: burnett01/rsync-deployments@4.1
       with:
         switches: -avzr --delete --exclude=".git" --exclude=".github"
-        path: /var/www/html/index.nginx-debian.html
-        remote_path: ${{ secrets.DEPLOY_PATH }}
+        path: public/
+        remote_path: /var/www/html/index.nginx-debian.html
         remote_host: ${{ secrets.DEPLOY_HOST }}
         remote_user: ${{ secrets.DEPLOY_USER }}
         remote_key: ${{ secrets.DEPLOY_KEY }}
